@@ -6,6 +6,7 @@ from subprocess import call
 
 
 class Software():
+
     def __init__(self, name, templates, refresh, backup_dir):
         self.name = name
         self.templates = templates

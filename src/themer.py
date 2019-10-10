@@ -15,7 +15,6 @@ BACKUP_TEMP_FOLDER = os.path.join(HOME_FOLDER, ".themer_tmp")
 BACKUP_FOLDER = os.path.join(HOME_FOLDER, ".themer")
 
 
-
 class Themer():
 
     def __init__(self, config_file, **kwargs):
