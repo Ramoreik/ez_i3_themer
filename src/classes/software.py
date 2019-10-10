@@ -1,7 +1,6 @@
 import os
-import pprint
+import src.libs.gen_utils as gen_utils
 from jinja2 import Template
-from datetime import datetime
 from shutil import copyfile
 from subprocess import call
 
@@ -11,9 +10,9 @@ class Software():
         self.name = name
         self.templates = templates
         self.refresh = refresh
-        self.backup_dir = os.path.join(backup_dir, self.name, self.timestamp())
+        self.backup_dir = os.path.join(backup_dir, self.name, gen_utils.timestamp())
 
-    def execute(self):
+    def configure(self):
         self.validate_templates_integrity()
         self.backup()
         self.render_templates()
@@ -23,7 +22,9 @@ class Software():
         for template in self.templates:
             prep_template = Template(open(template["src"], 'r').read())
             rendered_template = prep_template.render(template["config"])
-            open(template["dest"], 'w').write(rendered_template)
+            dest = template["dest"]
+            open(dest, 'w').write(rendered_template)
+            gen_utils.adjust_mode(dest)
 
     def refresh_software(self):
         if self.refresh != []:
@@ -31,9 +32,6 @@ class Software():
             call(self.refresh, stdout=f, stderr=f)
         else:
             print("\t{} >> no refresh method was specified".format(self.name))
-
-    def timestamp(self):
-        return str(datetime.timestamp(datetime.now()))
 
     def validate_templates_integrity(self):
         for template in self.templates:
@@ -44,12 +42,8 @@ class Software():
                         element please configure correctly".format(self.name))
                 exit(1)
 
-    def create_backup_dir(self):
-        if not os.path.exists(self.backup_dir):
-            os.makedirs(self.backup_dir)
-
     def backup(self):
-        self.create_backup_dir()
+        gen_utils.create_backup_dir(self.backup_dir)
         for template in self.templates:
             destination = os.path.join(self.backup_dir, os.path.basename(template["dest"]))
             if os.path.exists(template["dest"]):

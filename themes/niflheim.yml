@@ -51,9 +51,6 @@ softwares:
           placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
 
   - name: polybar
-    refresh:
-      - bash
-      - ~/.config/polybar/launcher.sh
     templates:
       - src: polybar/polybar.j2
         dest: ~/.config/polybar/config
@@ -90,12 +87,12 @@ softwares:
     refresh:
       - nitrogen
       - "--set-zoom-fill"
-      - "~/Pictures/wallpapers/1570361442134.jpg"
+      - "~/Pictures/wallpapers/1565414223463.png"
     templates:
       - src: nitrogen/nitrogen.j2
         dest: ~/.config/nitrogen/bg-saved.cfg
         config:
-          wallpaper: ~/Pictures/wallpapers/1570361442134.jpg
+          wallpaper: ~/Pictures/wallpapers/1565414223463.png
 
   - name: termite
     templates:
