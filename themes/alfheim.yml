@@ -51,9 +51,6 @@ softwares:
           placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
 
   - name: polybar
-    refresh:
-      - bash
-      - ~/.config/polybar/launcher.sh
     templates:
       - src: polybar/polybar.j2
         dest: ~/.config/polybar/config
