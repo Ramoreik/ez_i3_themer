@@ -1,27 +1,61 @@
-# I3WM Better Themer
+# I3WM EZ Themer
 
-This program is made with the goal of being a simple, modular and fun i3windows manager themer.
+## What it is ?
 
-## This program should make use of the following aesthetic technologies :
+It is a themer that uses jinja2 templates to configure a variety of programs.
 
-- I3 gaps
+It could be modified to include pretty much every program that has configuration files as long as we take the time to make adequate templates. 
 
-- Nitrogen
+### Installation :
 
-- Conky
+Simply clone the repo and run the appropriate installation script from the scripts folder.
 
-- Compton
+```bash
+git clone https://github.com/Ramoreik/ez_i3_themer.git
+cd ez_i3_themer/scripts
+# Run the install script for your distribution
+bash install_arch.sh
+# Install requirements
+pip install -r requirements.txt
+```
 
-- X customizability ( Different X configuration files)
+Once that's done you can either use one of my themes and change the wallpaper(as it is not in the repo), or you can craft your own from scratch.
 
-The goal is to make something that will be an abstraction to all the configuration that need to be done underneath and just centralize it in one spot.~~~~
+Once you have your theme you can run the following command : 
 
-i would like to add the possibility of including plugin in order for people to contribute to the project. 
+```
+python main.py -t themes/YOUR_THEME.yml
+```
 
-The main idea is to create a main configuration file that will abstract from everything underneath.
+Enjoy !
 
-Every technology will have their own configurations and will be executed by their own plugins. 
+### How does it work?
 
-This way it is very modular and can be incremented really easily with the upcoming of new open-source aesthetic projects. 
+It uses a configuraton files with a list of different softwares to configure, every software can have multiple template files. Every software can also have a refresh method to update the appearance as the program executes.
 
+#### Templates :
 
+Every software has a list of templates with a source, destination and configuration tag. 
+
+The source should be within the templates folder, destination is wherever you want on your computer and the configuration tag contains all the variables to be replaced in the template.
+
+#### Refresh :
+
+Basically, the refresh tag takes a list and directly passes it through to your shell using subprocess.call.
+
+#### Example of the configuration for a software :
+
+```yaml
+  - name: nitrogen
+    refresh:
+      - nitrogen
+      - "--set-zoom-fill"
+      - "~/Pictures/wallpapers/1569438865684.jpg"
+    templates:
+      - src: nitrogen/nitrogen.j2
+        dest: ~/.config/nitrogen/bg-saved.cfg
+        config:
+          wallpaper: ~/Pictures/wallpapers/1569438865684.jpg
+```
+
+The bash install scripts were taken and modified for my purpose from : https://github.com/unix121/i3wm-themer 
