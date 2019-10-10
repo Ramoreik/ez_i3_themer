@@ -1,0 +1,130 @@
+softwares:
+  - name: xresources
+    templates:
+      - src: xresources/xresources.j2
+        dest: ~/.Xresources
+        config:
+          xcolors:
+            background: "#1f1f1f"
+            foreground: "#c6c6c6"
+            cursorcolor: "#c6c6c6"
+            color0: "#828282"
+            color1: "#cc6666"
+            color2: "#e07624"
+            color3: "#f0c674"
+            color4: "#e07624"
+            color5: "#d34A36"
+            color6: "#e07624"
+            color7: "#828282"
+            color8: "#828282"
+            color9: "#cc6666"
+            color10: "#e07624"
+            color11: "#f0c674"
+            color12: "#e07624"
+            color13: "#d34A36"
+            color14: "#e07624"
+            color15: "#c6c6c6"
+          rofi:
+            color_window: "#162025, #f6480a, #f6480a"
+            color_normal: "#162025, #d5b41f, #162025, #162025, #f6480a"
+            color_active: "#162025, #d5b41f, #162025, #162025, #f6480a"
+            color_urgent: "#162025, #d5b41f, #162025, #162025, #f6480a"
+            font: "Source Code Pro Semibold 10.5"
+    refresh:
+      - xrdb
+      - ~/.Xresources
+
+  - name: i3
+    refresh:
+      - i3-msg
+      - restart
+    templates:
+      - src: i3/i3.j2
+        dest: ~/.config/i3/config
+        config:
+          modifier_key: Mod4
+          background: "#1f1f1f"
+          focused: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          unfocused: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          focused_inactive: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          urgent: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+
+  - name: polybar
+    refresh:
+      - bash
+      - ~/.config/polybar/launcher.sh
+    templates:
+      - src: polybar/polybar.j2
+        dest: ~/.config/polybar/config
+        config:
+          bar_name: niflheim_bar
+          background: "#1f1f1f"
+          foreground: "#c6c6c6"
+          modules_left: "wlan eth"
+          modules_center: "i3"
+          modules_right: "date powermenu"
+          label_unfocused_background: "#e07624"
+          label_unfocused_foreground: "#1f1f1f"
+          label_mode_background: "#1f1f1f"
+          label_mode_foreground: "#828282"
+          label_focused_foreground: "#1f1f1f"
+          label_focused_background: "#d34a36"
+          label_visible_background: "#e07624"
+          label_visible_foreground: "#1f1f1f"
+          format_foreground: "#1f1f1f"
+          format_background: "#e07624"
+          label_open_foreground: "#e07624"
+          label_close_foreground: "#e07624"
+          label_separator_foreground: "#e07624"
+          format_connected_foreground: "#1f1f1f"
+          format_connected_background: "#e07624"
+          format_connected_prefix_foreground: "#1f1f1f"
+          ramp_signal_foreground: "#1f1f1f"
+      - src: polybar/launcher.j2
+        dest: ~/.config/polybar/launcher.sh
+        config:
+          bar_name: niflheim_bar
+
+  - name: nitrogen
+    refresh:
+      - nitrogen
+      - "--set-zoom-fill"
+      - "~/Pictures/wallpapers/1569438865684.jpg"
+    templates:
+      - src: nitrogen/nitrogen.j2
+        dest: ~/.config/nitrogen/bg-saved.cfg
+        config:
+          wallpaper: ~/Pictures/wallpapers/1569438865684.jpg
+
+  - name: termite
+    templates:
+      - src: termite/config.j2
+        dest: ~/.config/termite/config
+        config:
+          font: Knack Nerd Font 11
+          cursor: "#EF6D8D"
+          foreground: "#9EB6C3"
+          background: rgba(47, 30, 46, 0.8)
+          color0: "#2f1e2e"
+          color1: "#ef6155"
+          color2: "#48b685"
+          color3: "#fec418"
+          color4: "#06b6ef"
+          color5: "#815ba4"
+          color6: "#5bc4bf"
+          color7: "#a39e9b"
+          color8: "#776e71"
+          color9: "#ef6155"
+          color10: "#48b685"
+          color11: "#fec418"
+          color12: "#06b6ef"
+          color13: "#815ba4"
+          color14: "#5bc4bf"
+          color15: "#e7e9db"
+          color16: "#f99b15"
+          color17: "#e96ba8"
+          color18: "#41323f"
+          color19: "#4f424c"
+          color20: "#8d8687"
+          color21: "#b9b6b0"
