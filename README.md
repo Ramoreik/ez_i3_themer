@@ -1,6 +1,6 @@
 # I3WM EZ Themer
 
-## What it is ?
+## What is it ?
 
 It is a themer that uses jinja2 templates to configure a variety of programs.
 
