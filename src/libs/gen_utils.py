@@ -1,19 +1,9 @@
 import os
 import stat
 import yaml
-from datetime import datetime
 from getpass import getuser
-
-HOME_FOLDER = os.path.join(os.path.sep, "home", getuser())
-WILDCARDS = {
-    "~" : HOME_FOLDER
-}
-EXECUTABLE_EXTENSIONS = [
-    "sh",
-    "py",
-    "ksh"
-]
-
+from datetime import datetime
+from src.definitions import WILDCARDS, EXECUTABLE_EXTENSIONS
 
 def expand_wilcards(theme_file):
     theme_content = open(theme_file, 'r').read()

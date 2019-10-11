@@ -4,15 +4,9 @@ import pprint
 import traceback
 import src.libs.gen_utils as gen_utils
 from src.classes.software import Software
+from src.definitions import BACKUP_FOLDER, TEMPLATES_FOLDER
 from getpass import getuser
 from jinja2 import Template
-
-
-HOME_FOLDER = os.path.join(os.path.sep, "home", getuser())
-CURRENT_FOLDER = os.path.dirname(__file__)
-TEMPLATES_FOLDER = os.path.join(CURRENT_FOLDER, "templates")
-BACKUP_TEMP_FOLDER = os.path.join(HOME_FOLDER, ".themer_tmp")
-BACKUP_FOLDER = os.path.join(HOME_FOLDER, ".themer")
 
 
 class Themer():

@@ -58,4 +58,5 @@ Basically, the refresh tag takes a list and directly passes it through to your s
           wallpaper: ~/Pictures/wallpapers/1569438865684.jpg
 ```
 
-The bash install scripts were taken and modified for my purpose from : https://github.com/unix121/i3wm-themer 
+The bash install scripts were taken and modified for my purpose from : https://github.com/unix121/i3wm-themer
+Most of the art for the default wallpapers came from this wonderful artist ! : https://www.artstation.com/aenamiart

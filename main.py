@@ -1,4 +1,4 @@
-from src.themer import Themer
+from src.classes.themer import Themer
 import argparse
 
 def handle_args():

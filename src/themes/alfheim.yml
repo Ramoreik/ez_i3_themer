@@ -9,26 +9,26 @@ softwares:
             foreground: "#c6c6c6"
             cursorcolor: "#c6c6c6"
             color0: "#828282"
-            color1: "#616dda"
-            color2: "#424a8f"
-            color3: "#6cb39d"
-            color4: "#424a8f"
+            color1: "#cc6666"
+            color2: "#e07624"
+            color3: "#f0c674"
+            color4: "#e07624"
             color5: "#d34A36"
-            color6: "#424a8f"
+            color6: "#e07624"
             color7: "#828282"
             color8: "#828282"
-            color9: "#616dda"
-            color10: "#424a8f"
-            color11: "#6cb39d"
-            color12: "#424a8f"
+            color9: "#cc6666"
+            color10: "#e07624"
+            color11: "#f0c674"
+            color12: "#e07624"
             color13: "#d34A36"
-            color14: "#424a8f"
+            color14: "#e07624"
             color15: "#c6c6c6"
           rofi:
-            color_window: "#162025, #616dda, #616dda"
-            color_normal: "#162025, #6cb39d, #162025, #162025, #616dda"
-            color_active: "#162025, #6cb39d, #162025, #162025, #616dda"
-            color_urgent: "#162025, #6cb39d, #162025, #162025, #616dda"
+            color_window: "#162025, #f6480a, #f6480a"
+            color_normal: "#162025, #d5b41f, #162025, #162025, #f6480a"
+            color_active: "#162025, #d5b41f, #162025, #162025, #f6480a"
+            color_urgent: "#162025, #d5b41f, #162025, #162025, #f6480a"
             font: "Source Code Pro Semibold 10.5"
     refresh:
       - xrdb
@@ -44,11 +44,11 @@ softwares:
         config:
           modifier_key: Mod4
           background: "#1f1f1f"
-          focused: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
-          unfocused: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
-          focused_inactive: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
-          urgent: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
-          placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"
+          focused: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          unfocused: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          focused_inactive: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          urgent: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
+          placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #e07624 #e07624"
 
   - name: polybar
     templates:
@@ -61,21 +61,21 @@ softwares:
           modules_left: "wlan eth"
           modules_center: "i3"
           modules_right: "date powermenu"
-          label_unfocused_background: "#616dda"
+          label_unfocused_background: "#e07624"
           label_unfocused_foreground: "#1f1f1f"
           label_mode_background: "#1f1f1f"
           label_mode_foreground: "#828282"
           label_focused_foreground: "#1f1f1f"
-          label_focused_background: "#6cb39d"
-          label_visible_background: "#616dda"
+          label_focused_background: "#d34a36"
+          label_visible_background: "#e07624"
           label_visible_foreground: "#1f1f1f"
           format_foreground: "#1f1f1f"
-          format_background: "#616dda"
-          label_open_foreground: "#616dda"
-          label_close_foreground: "#616dda"
-          label_separator_foreground: "#616dda"
+          format_background: "#e07624"
+          label_open_foreground: "#e07624"
+          label_close_foreground: "#e07624"
+          label_separator_foreground: "#e07624"
           format_connected_foreground: "#1f1f1f"
-          format_connected_background: "#616dda"
+          format_connected_background: "#e07624"
           format_connected_prefix_foreground: "#1f1f1f"
           ramp_signal_foreground: "#1f1f1f"
       - src: polybar/launcher.j2
@@ -87,12 +87,12 @@ softwares:
     refresh:
       - nitrogen
       - "--set-zoom-fill"
-      - "~/Pictures/wallpapers/1565414223463.png"
+      - ./resources/wallpapers/cyberpunk_2.jpg
     templates:
       - src: nitrogen/nitrogen.j2
         dest: ~/.config/nitrogen/bg-saved.cfg
         config:
-          wallpaper: ~/Pictures/wallpapers/1565414223463.png
+          wallpaper: ./resources/wallpapers/cyberpunk_2.jpg
 
   - name: termite
     templates:
@@ -102,7 +102,7 @@ softwares:
           font: Knack Nerd Font 11
           cursor: "#EF6D8D"
           foreground: "#9EB6C3"
-          background:  rgba(33,28,51,0.9)
+          background: rgba(47, 30, 46, 0.8)
           color0: "#2f1e2e"
           color1: "#ef6155"
           color2: "#48b685"
