@@ -100,7 +100,7 @@ softwares:
       - src: termite/config.j2
         dest: ~/.config/termite/config
         config:
-          font: Knack Nerd Font 11
+          font: Hack Nerd Font 11
           cursor: "#EF6D8D"
           foreground: "#9EB6C3"
           background: rgba(47, 30, 46, 0.8)
