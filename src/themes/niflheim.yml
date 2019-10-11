@@ -42,6 +42,7 @@ softwares:
       - src: i3/i3.j2
         dest: ~/.config/i3/config
         config:
+          terminal: termite
           modifier_key: Mod4
           background: "#1f1f1f"
           focused: "#c6c6c6 #1f1f1f #c6c6c6 #6cb39d #6cb39d"

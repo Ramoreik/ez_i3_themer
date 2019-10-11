@@ -42,6 +42,7 @@ softwares:
       - src: i3/i3.j2
         dest: ~/.config/i3/config
         config:
+          terminal: termite
           modifier_key: Mod4
           background: "#1f1f1f"
           focused: "#c6c6c6 #1f1f1f #c6c6c6 #e66edb #e66edb"
@@ -99,7 +100,7 @@ softwares:
       - src: termite/config.j2
         dest: ~/.config/termite/config
         config:
-          font: Knack Nerd Font 11
+          font: Hack Nerd Font 11
           cursor: "#1FF4C4"
           foreground: "#9EB6C3"
           background:  rgba(33,28,51,0.9)
