@@ -1,0 +1,129 @@
+softwares:
+  - name: xresources
+    templates:
+      - src: xresources/xresources.j2
+        dest: ~/.Xresources
+        config:
+          xcolors:
+            background: "#1f1f1f"
+            foreground: "#c6c6c6"
+            cursorcolor: "#c6c6c6"
+            color0: "#828282"
+            color1: "#A3201E"
+            color2: "#424a8f"
+            color3: "#FF422A"
+            color4: "#424a8f"
+            color5: "#d34A36"
+            color6: "#424a8f"
+            color7: "#828282"
+            color8: "#828282"
+            color9: "#A3201E"
+            color10: "#424a8f"
+            color11: "#FF422A"
+            color12: "#424a8f"
+            color13: "#d34A36"
+            color14: "#424a8f"
+            color15: "#c6c6c6"
+          rofi:
+            color_window: "#162025, #A3201E, #A3201E"
+            color_normal: "#162025, #FF422A, #162025, #162025, #A3201E"
+            color_active: "#162025, #FF422A, #162025, #162025, #A3201E"
+            color_urgent: "#162025, #FF422A, #162025, #162025, #A3201E"
+            font: "Source Code Pro Semibold 10.5"
+    refresh:
+      - xrdb
+      - ~/.Xresources
+
+  - name: i3
+    refresh:
+      - i3-msg
+      - restart
+    templates:
+      - src: i3/i3.j2
+        dest: ~/.config/i3/config
+        config:
+          terminal: termite
+          modifier_key: Mod4
+          background: "#1f1f1f"
+          focused: "#c6c6c6 #1f1f1f #c6c6c6 #FF422A #FF422A"
+          unfocused: "#c6c6c6 #1f1f1f #c6c6c6 #FF422A #FF422A"
+          focused_inactive: "#c6c6c6 #1f1f1f #c6c6c6 #FF422A #FF422A"
+          urgent: "#c6c6c6 #1f1f1f #c6c6c6 #FF422A #FF422A"
+          placeholder: "#c6c6c6 #1f1f1f #c6c6c6 #FF422A #FF422A"
+
+  - name: polybar
+    templates:
+      - src: polybar/polybar.j2
+        dest: ~/.config/polybar/config
+        config:
+          bar_name: niflheim_bar
+          background: "#1f1f1f"
+          foreground: "#c6c6c6"
+          modules_left: "wlan eth"
+          modules_center: "i3"
+          modules_right: "date powermenu"
+          label_unfocused_background: "#A3201E"
+          label_unfocused_foreground: "#1f1f1f"
+          label_mode_background: "#1f1f1f"
+          label_mode_foreground: "#828282"
+          label_focused_foreground: "#1f1f1f"
+          label_focused_background: "#FF422A"
+          label_visible_background: "#A3201E"
+          label_visible_foreground: "#1f1f1f"
+          format_foreground: "#1f1f1f"
+          format_background: "#A3201E"
+          label_open_foreground: "#A3201E"
+          label_close_foreground: "#A3201E"
+          label_separator_foreground: "#A3201E"
+          format_connected_foreground: "#1f1f1f"
+          format_connected_background: "#A3201E"
+          format_connected_prefix_foreground: "#1f1f1f"
+          ramp_signal_foreground: "#1f1f1f"
+      - src: polybar/launcher.j2
+        dest: ~/.config/polybar/launcher.sh
+        config:
+          bar_name: niflheim_bar
+
+  - name: nitrogen
+    refresh:
+      - nitrogen
+      - "--set-zoom-fill"
+      - ./resources/wallpapers/alena-aenami-seaside1920.jpg
+    templates:
+      - src: nitrogen/nitrogen.j2
+        dest: ~/.config/nitrogen/bg-saved.cfg
+        config:
+          wallpaper: ./resources/wallpapers/alena-aenami-seaside1920.jpg
+
+  - name: termite
+    templates:
+      - src: termite/config.j2
+        dest: ~/.config/termite/config
+        config:
+          font: Hack Nerd Font 11
+          cursor: "#1FF4C4"
+          foreground: "#9EB6C3"
+          background:  rgba(33,28,51,0.9)
+          color0: "#2f1e2e"
+          color1: "#1FF4C4"
+          color2: "#48b685"
+          color3: "#fec418"
+          color4: "#e66edb"
+          color5: "#815ba4"
+          color6: "#5bc4bf"
+          color7: "#a39e9b"
+          color8: "#776e71"
+          color9: "#e66edb"
+          color10: "#CB458A"
+          color11: "#fec418"
+          color12: "#e66edb"
+          color13: "#815ba4"
+          color14: "#5bc4bf"
+          color15: "#e7e9db"
+          color16: "#f99b15"
+          color17: "#e96ba8"
+          color18: "#41323f"
+          color19: "#4f424c"
+          color20: "#8d8687"
+          color21: "#b9b6b0"
+
